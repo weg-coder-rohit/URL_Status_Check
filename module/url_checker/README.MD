@@ -1,3 +1,5 @@
+USE Visual Studio code to see the diagram correctly
+
 ![alt text](URL_status.drawio.png)
 
 
