@@ -1,9 +1,10 @@
-USE Visual Studio code to see the diagram correctly
+
 
 ![alt text](URL_status.drawio.png)
 
 
 
+USE Visual Studio code to see the diagram correctly
 Flow of the Terraform code.
   +----------------+       +----------------+       +-----------------+
   |                |       |                |       |                 |
