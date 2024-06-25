@@ -1,3 +1,10 @@
+This Terraform Code will create an lambda function: That will check the url status by a simple get request, then will send an alert to an SNS topic subscribed email if the status code of get request is not 200 or if there is any exception retured. 
+
+Then I have created an eventbridge rule for continuous monitoring of the url that will will invoke the lambda function in every hour of the day(we can set the frequency)
+
+Lambda function is used because of its serverless nature and for minimum cost will only get billed for the time it runs. 
+SNS topic subscription has 2000 mail alert free for 1 month.
+
 ![alt text](URL_status.drawio.png)
 
 

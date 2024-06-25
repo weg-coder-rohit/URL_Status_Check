@@ -4,13 +4,9 @@ import boto3
 import os
 
 sns_client = boto3.client('sns')
-
-
 def lambda_handler(event, context):
-    # TODO implement
-
+    # ARN will be taken from environment variable that is created from terraform code
     sns_topic_arn = os.environ['SNS_TOPIC_ARN']
-    
     url = event['key1']
     try:
         # Attempt to open the URL and get the HTTP status code
@@ -29,9 +25,9 @@ def lambda_handler(event, context):
             'body': f'Status of {url} is: {status_code}'
         }
     except Exception as e:
-        # Handle any potential exceptions, e.g., URL not accessible, connection timeout Used because CG has blocked access to some websites
+        # Handle any potential exceptions, e.g., URL not accessible, connection timeout Used because CG has blocked access
+        #  to some websites
         error_message = f"Error checking {url}: {str(e)}"
-        # send_sms(error_message)
         sns_client.publish(
             TopicArn=sns_topic_arn,
             Message=error_message,
