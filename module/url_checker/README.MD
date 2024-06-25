@@ -1,3 +1,7 @@
+![alt text](URL_status.drawio.png)
+
+
+
 Flow of the Terraform code.
   +----------------+       +----------------+       +-----------------+
   |                |       |                |       |                 |
