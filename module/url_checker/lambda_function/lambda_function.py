@@ -11,7 +11,9 @@ def lambda_handler(event, context):
     try:
         # Attempt to open the URL and get the HTTP status code
         status_code = urllib.request.urlopen(url).getcode()
-        if status_code != 200:
+        # this will check if the status code is within the range of 200-300 which is considered
+        #  to be a susseccfull response code if not then it will send alert
+        if status_code not in  range(200, 300):
             # IF our URL is down, send SNS notification
             message = f"URL {url} is down! Status code: {status_code}"
             # send_sms(message)
